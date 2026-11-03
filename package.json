@@ -19,7 +19,8 @@
     "translate": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/translate.ts",
     "translate:extract": "cross-env NODE_OPTIONS=--no-deprecation TRANSLATE=extract payload run src/seed/translate.ts",
     "migrate": "cross-env NODE_OPTIONS=--no-deprecation payload migrate",
-    "migrate:create": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:create"
+    "migrate:create": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:create",
+    "media:to-r2": "node scripts/media-to-r2.mjs"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.92.0",

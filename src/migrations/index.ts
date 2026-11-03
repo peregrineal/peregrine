@@ -12,6 +12,7 @@ import * as migration_20261102_134517_card_grid_closing_above from './20261102_1
 import * as migration_20261102_144018_cta_light_style from './20261102_144018_cta_light_style';
 import * as migration_20261102_161519_split_content_text_only from './20261102_161519_split_content_text_only';
 import * as migration_20261102_163026_link_hide_arrow from './20261102_163026_link_hide_arrow';
+import * as migration_20261103_160636_r2_storage from './20261103_160636_r2_storage';
 
 export const migrations = [
   {
@@ -82,6 +83,11 @@ export const migrations = [
   {
     up: migration_20261102_163026_link_hide_arrow.up,
     down: migration_20261102_163026_link_hide_arrow.down,
-    name: '20261102_163026_link_hide_arrow'
+    name: '20261102_163026_link_hide_arrow',
+  },
+  {
+    up: migration_20261103_160636_r2_storage.up,
+    down: migration_20261103_160636_r2_storage.down,
+    name: '20261103_160636_r2_storage'
   },
 ];

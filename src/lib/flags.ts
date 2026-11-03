@@ -1,0 +1,25 @@
+// Countries whose flag can be shown on a card (ISO 3166-1 alpha-2). The study and visa
+// destinations; extend the list when a new destination is added.
+export const flagOptions = [
+  { label: 'United Kingdom', value: 'GB' },
+  { label: 'United States', value: 'US' },
+  { label: 'Canada', value: 'CA' },
+  { label: 'Germany', value: 'DE' },
+  { label: 'Austria', value: 'AT' },
+  { label: 'Italy', value: 'IT' },
+  { label: 'Spain', value: 'ES' },
+  { label: 'Switzerland', value: 'CH' },
+  { label: 'Netherlands', value: 'NL' },
+  { label: 'Belgium', value: 'BE' },
+  { label: 'Luxembourg', value: 'LU' },
+  { label: 'Czech Republic', value: 'CZ' },
+  { label: 'Poland', value: 'PL' },
+  { label: 'Hungary', value: 'HU' },
+  { label: 'Norway', value: 'NO' },
+  { label: 'Finland', value: 'FI' },
+  { label: 'Sweden', value: 'SE' },
+  { label: 'Estonia', value: 'EE' },
+  { label: 'Latvia', value: 'LV' },
+  { label: 'Lithuania', value: 'LT' },
+  { label: 'Albania', value: 'AL' },
+] as const

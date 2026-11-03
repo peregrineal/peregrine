@@ -1,0 +1,202 @@
+[
+  {
+    "destination": "United Kingdom",
+    "file": "destination-united-kingdom.jpg",
+    "alt": "Palace of Westminster and Westminster Bridge on the Thames, London",
+    "altSq": "Pallati i Westminsterit dhe Ura e Westminsterit mbi Thames, Londër",
+    "source": "https://commons.wikimedia.org/wiki/File:At_London_2025_566_-_Westminster_Bridge_with_Palace_of_Westminster_.jpg",
+    "author": "Mike Peel",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "destination": "United States",
+    "file": "destination-united-states.jpg",
+    "alt": "Brooklyn Bridge and the Lower Manhattan skyline, New York",
+    "altSq": "Ura e Brooklynit dhe panorama e Manhatanit të Poshtëm, Nju Jork",
+    "source": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge,_view_from_Brooklyn_Bridge_Park,_New_York_City,_20231002_0851_1561.jpg",
+    "author": "Jakub Hałun",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "destination": "Canada",
+    "file": "destination-canada.jpg",
+    "alt": "Château Frontenac at dusk, Quebec City",
+    "altSq": "Château Frontenac në muzg, Kebek",
+    "source": "https://commons.wikimedia.org/wiki/File:Chateau_Frontenac_at_dusk_in_Quebec_City.jpg",
+    "author": "Wilfredor",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "destination": "Germany",
+    "file": "destination-germany.jpg",
+    "alt": "Brandenburg Gate, Berlin",
+    "altSq": "Porta e Brandenburgut, Berlin",
+    "source": "https://commons.wikimedia.org/wiki/File:Berlin,_Brandenburger_Tor_--_2008_--_0153.jpg",
+    "author": "Dietmar Rabich",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "destination": "Austria",
+    "file": "destination-austria.jpg",
+    "alt": "Schönbrunn Palace and gardens, Vienna",
+    "altSq": "Pallati dhe kopshtet e Schönbrunnit, Vjenë",
+    "source": "https://commons.wikimedia.org/wiki/File:Schloss_Sch%C3%B6nbrunn_Wien_2014_(Zuschnitt_2).jpg",
+    "author": "Thomas Wolf",
+    "licence": "CC BY-SA 3.0 de",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+  },
+  {
+    "destination": "Italy",
+    "file": "destination-italy.jpg",
+    "alt": "Dome of Florence Cathedral seen above the rooftops",
+    "altSq": "Kupola e Katedrales së Firences mbi çatitë e qytetit",
+    "source": "https://commons.wikimedia.org/wiki/File:Florence_Cathedral_-_Duomo_-_Cathedral_of_Santa_Maria_del_Fiore_(51350523382).jpg",
+    "author": "Nan Palmero",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "destination": "Spain",
+    "file": "destination-spain.jpg",
+    "alt": "Plaza de España, Seville",
+    "altSq": "Plaza de España, Sevilje",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaza_de_Espa%C3%B1a,_Sevilla_Octubre_1999_-_08.jpg",
+    "author": "Infrogmation",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "destination": "Switzerland",
+    "file": "destination-switzerland.jpg",
+    "alt": "Chapel Bridge and Water Tower at blue hour, Lucerne",
+    "altSq": "Ura e Kapelës dhe Kulla e Ujit në muzg, Lucernë",
+    "source": "https://commons.wikimedia.org/wiki/File:CH.LU.Luzern_Kapellbr%C3%BCcke_01_16x9-R_16384x9216.jpg",
+    "author": "Aristeas",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "destination": "Netherlands",
+    "file": "destination-netherlands.jpg",
+    "alt": "Canal houses and houseboats, Amsterdam",
+    "altSq": "Shtëpi buzë kanalit dhe varka-shtëpi, Amsterdam",
+    "source": "https://commons.wikimedia.org/wiki/File:Amsterdam_-_Canal_houses_(3416090776).jpg",
+    "author": "Ernest McGray, Jr.",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  {
+    "destination": "Belgium",
+    "file": "destination-belgium.jpg",
+    "alt": "Guild houses on the Grand-Place, Brussels",
+    "altSq": "Shtëpitë e esnafëve në Grand-Place, Bruksel",
+    "source": "https://commons.wikimedia.org/wiki/File:Belgique_-_Bruxelles_-_Grand-Place_-_C%C3%B4t%C3%A9_nord-est.jpg",
+    "author": "EmDee",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "destination": "Luxembourg",
+    "file": "destination-luxembourg.jpg",
+    "alt": "The Grund quarter at night, Luxembourg City",
+    "altSq": "Lagjja Grund natën, qyteti i Luksemburgut",
+    "source": "https://commons.wikimedia.org/wiki/File:Grund,_Luxembourg_City_(54540538196).jpg",
+    "author": "Pierre Blaché from Paris, France",
+    "licence": "CC0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  {
+    "destination": "Czech Republic",
+    "file": "destination-czech-republic.jpg",
+    "alt": "Old Town Square and the Church of Our Lady before Týn, Prague",
+    "altSq": "Sheshi i Qytetit të Vjetër dhe Kisha e Zojës përpara Týn, Pragë",
+    "source": "https://commons.wikimedia.org/wiki/File:Old_Town_Square_(Prague)_20150904-2.jpg",
+    "author": "Suicasmo",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "destination": "Poland",
+    "file": "destination-poland.jpg",
+    "alt": "Cloth Hall on the Main Market Square, Kraków",
+    "altSq": "Pazari i Rrobave në Sheshin Kryesor, Krakov",
+    "source": "https://commons.wikimedia.org/wiki/File:2025,_Krak%C3%B3w,_Sukiennice,_Rynek_G%C5%82%C3%B3wny_(5).jpg",
+    "author": "Igor123121",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  {
+    "destination": "Hungary",
+    "file": "destination-hungary.jpg",
+    "alt": "Hungarian Parliament Building on the Danube, Budapest",
+    "altSq": "Ndërtesa e Parlamentit hungarez buzë Danubit, Budapest",
+    "source": "https://commons.wikimedia.org/wiki/File:Budapest_Parliament_4604.JPG",
+    "author": "Dirk Beyer",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "destination": "Norway",
+    "file": "destination-norway.jpg",
+    "alt": "Wooden merchant houses of Bryggen, Bergen",
+    "altSq": "Shtëpitë prej druri të tregtarëve në Bryggen, Bergen",
+    "source": "https://commons.wikimedia.org/wiki/File:Bryggen,_Bergen,_Noruega,_2019-09-08,_DD_115-117_PAN.jpg",
+    "author": "Diego Delso",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "destination": "Finland",
+    "file": "destination-finland.jpg",
+    "alt": "Helsinki Cathedral above Senate Square",
+    "altSq": "Katedralja e Helsinkit mbi Sheshin e Senatit",
+    "source": "https://commons.wikimedia.org/wiki/File:Helsinki_Senate_Square_and_Helsinki_Cathedral_in_May_2026.jpg",
+    "author": "JIP",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  {
+    "destination": "Sweden",
+    "file": "destination-sweden.jpg",
+    "alt": "Riddarholmen and Gamla Stan across the water, Stockholm",
+    "altSq": "Riddarholmen dhe Gamla Stan përtej ujit, Stokholm",
+    "source": "https://commons.wikimedia.org/wiki/File:Riddarholmen_and_Gamla_Stan_(45297710561).jpg",
+    "author": "Sonse",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  {
+    "destination": "Estonia",
+    "file": "destination-estonia.jpg",
+    "alt": "Rooftops and towers of Tallinn Old Town",
+    "altSq": "Çatitë dhe kullat e Qytetit të Vjetër të Talinit",
+    "source": "https://commons.wikimedia.org/wiki/File:Old_town_of_Tallinn_06-03-2012.jpg",
+    "author": "Ivar Leidus (Iifar)",
+    "licence": "CC BY-SA 3.0 ee",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/ee/deed.en"
+  },
+  {
+    "destination": "Latvia",
+    "file": "destination-latvia.jpg",
+    "alt": "House of the Blackheads at dusk, Riga",
+    "altSq": "Shtëpia e Kokëzinjve në muzg, Riga",
+    "source": "https://commons.wikimedia.org/wiki/File:House_of_Blackheads_at_Dusk_1,_Riga,_Latvia_-_Diliff.jpg",
+    "author": "Diliff",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  {
+    "destination": "Lithuania",
+    "file": "destination-lithuania.jpg",
+    "alt": "St Anne's Church and the Bernardine Church, Vilnius",
+    "altSq": "Kisha e Shën Anës dhe Kisha e Bernardinëve, Vilnius",
+    "source": "https://commons.wikimedia.org/wiki/File:Adam_Mickiewicz_Vilnius_11.jpg",
+    "author": "Scotch Mist",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+]

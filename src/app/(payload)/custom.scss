@@ -1,0 +1,49 @@
+// PEREGRINE admin branding: navy primary actions, champagne accents, larger body text.
+:root {
+  --peregrine-navy: #0a2240;
+  --peregrine-navy-deep: #061022;
+  --peregrine-champagne: #c9a96e;
+}
+
+html[data-theme='light'] {
+  .btn--style-primary {
+    background-color: var(--peregrine-navy);
+    color: #fff;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--peregrine-navy-deep);
+    }
+  }
+
+  .nav__link--active,
+  .nav-group__toggle:hover {
+    color: var(--peregrine-navy);
+  }
+}
+
+.template-default__wrap,
+.collection-list,
+.collection-edit {
+  font-size: 15px;
+}
+
+.dashboard__label {
+  border-bottom: 1px solid var(--peregrine-champagne);
+  padding-bottom: 6px;
+}
+
+.peregrine-brand img {
+  display: block;
+}
+.peregrine-brand--dark {
+  display: none !important;
+}
+html[data-theme='dark'] {
+  .peregrine-brand--light {
+    display: none !important;
+  }
+  .peregrine-brand--dark {
+    display: block !important;
+  }
+}

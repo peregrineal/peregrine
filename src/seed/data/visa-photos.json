@@ -1,0 +1,35 @@
+[
+  {
+    "card": "United Kingdom",
+    "file": "visa-uk.jpg",
+    "alt": "Tower Bridge at dusk, London",
+    "altSq": "Tower Bridge në muzg, Londër",
+    "source": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_at_dusk.jpg",
+    "author": "Diliff, IgnisFatuus",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "flag": "GB"
+  },
+  {
+    "card": "United States",
+    "file": "visa-us.jpg",
+    "alt": "Golden Gate Bridge from Baker Beach at sunset, San Francisco",
+    "altSq": "Ura Golden Gate nga Baker Beach në perëndim, San Francisko",
+    "source": "https://commons.wikimedia.org/wiki/File:GoldenGateBridge_BakerBeach_MC.jpg",
+    "author": "Christian Mehlführer",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "flag": "US"
+  },
+  {
+    "card": "Canada",
+    "file": "visa-ca.jpg",
+    "alt": "Moraine Lake in Banff National Park, Alberta",
+    "altSq": "Liqeni Moraine në Parkun Kombëtar Banff, Alberta",
+    "source": "https://commons.wikimedia.org/wiki/File:Lake_Moraine-Banff_National_Park.jpg",
+    "author": "Florian Fuchs",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+    "flag": "CA"
+  }
+]

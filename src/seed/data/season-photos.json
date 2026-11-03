@@ -1,0 +1,23 @@
+[
+  {
+    "card": "Spring Camps",
+    "file": "season-spring.jpg",
+    "alt": "Students with backpacks walking towards a historic campus under spring blossom",
+    "altSq": "Studentë me çanta shpine që ecin drejt një kampusi historik nën lulet e pranverës",
+    "source": "Client supplied: Seasonal Camps FINAL document"
+  },
+  {
+    "card": "Summer Camps",
+    "file": "season-summer.jpg",
+    "alt": "Young people sailing small boats on a mountain lake in summer",
+    "altSq": "Të rinj që lundrojnë me varka të vogla me vela në një liqen malor në verë",
+    "source": "Client supplied: Seasonal Camps FINAL document"
+  },
+  {
+    "card": "Winter Camps",
+    "file": "season-winter.jpg",
+    "alt": "Smiling teenagers in ski gear on a snowy mountain slope",
+    "altSq": "Adoleshentë të buzëqeshur me veshje skiimi në një shpat mali me borë",
+    "source": "Client supplied: Seasonal Camps FINAL document"
+  }
+]

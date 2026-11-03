@@ -21,10 +21,15 @@ import { StrikethroughFeatureClient as StrikethroughFeatureClient_e70f5e05f09f93
 import { UnderlineFeatureClient as UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { BoldFeatureClient as BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { ItalicFeatureClient as ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
+import { ConsultationListExport as ConsultationListExport_3edf6b9cb1ec8ba40ec0b4571f938c29 } from '../../../components/admin/ExportEnquiries'
+import { ConsultationDocumentExport as ConsultationDocumentExport_3edf6b9cb1ec8ba40ec0b4571f938c29 } from '../../../components/admin/ExportEnquiries'
+import { PartnerListExport as PartnerListExport_3edf6b9cb1ec8ba40ec0b4571f938c29 } from '../../../components/admin/ExportEnquiries'
+import { PartnerDocumentExport as PartnerDocumentExport_3edf6b9cb1ec8ba40ec0b4571f938c29 } from '../../../components/admin/ExportEnquiries'
 import { Icon as Icon_81fda60f3e3709e861f40982a767707d } from '../../../components/admin/Brand'
 import { Logo as Logo_81fda60f3e3709e861f40982a767707d } from '../../../components/admin/Brand'
 import { Dashboard as Dashboard_16b88e9b8c48e393fa86591406efd08f } from '../../../components/admin/Dashboard'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
+import { S3ClientUploadHandler as S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24 } from '@payloadcms/storage-s3/client'
 
 /** @type import('payload').ImportMap */
 export const importMap = {
@@ -51,8 +56,13 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#UnderlineFeatureClient": UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#BoldFeatureClient": BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
+  "/components/admin/ExportEnquiries#ConsultationListExport": ConsultationListExport_3edf6b9cb1ec8ba40ec0b4571f938c29,
+  "/components/admin/ExportEnquiries#ConsultationDocumentExport": ConsultationDocumentExport_3edf6b9cb1ec8ba40ec0b4571f938c29,
+  "/components/admin/ExportEnquiries#PartnerListExport": PartnerListExport_3edf6b9cb1ec8ba40ec0b4571f938c29,
+  "/components/admin/ExportEnquiries#PartnerDocumentExport": PartnerDocumentExport_3edf6b9cb1ec8ba40ec0b4571f938c29,
   "/components/admin/Brand#Icon": Icon_81fda60f3e3709e861f40982a767707d,
   "/components/admin/Brand#Logo": Logo_81fda60f3e3709e861f40982a767707d,
   "/components/admin/Dashboard#Dashboard": Dashboard_16b88e9b8c48e393fa86591406efd08f,
-  "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
+  "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1,
+  "@payloadcms/storage-s3/client#S3ClientUploadHandler": S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24
 }

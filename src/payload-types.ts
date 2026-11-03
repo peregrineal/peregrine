@@ -1758,7 +1758,7 @@ export interface Service {
   createdAt: string;
 }
 /**
- * Form submissions. Only the Owner can see these. Download all as CSV: /api/enquiries/export.csv
+ * Form submissions. Only the Owner can see these. Use the Download buttons to save them as an Excel file.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "enquiries".
@@ -1798,7 +1798,7 @@ export interface Enquiry {
   createdAt: string;
 }
 /**
- * Form submissions. Only the Owner can see these. Download all as CSV: /api/partner-enquiries/export.csv
+ * Form submissions. Only the Owner can see these. Use the Download buttons to save them as an Excel file.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "partner-enquiries".

@@ -1,6 +1,7 @@
 import type { CollectionConfig, Endpoint, Field } from 'payload'
 
 import { ownerOnly } from '@/access'
+import { buildWorkbook, exportFilename, exportWhere, type ExportSlug } from '@/lib/enquiryExport'
 
 const readOnly = { readOnly: true }
 
@@ -29,34 +30,34 @@ const statusFields: Field[] = [
   },
 ]
 
-const exportDescription = (slug: string) =>
-  `Form submissions. Only the Owner can see these. Download all as CSV: /api/${slug}/export.csv`
+const description = 'Form submissions. Only the Owner can see these. Use the Download buttons to save them as an Excel file.'
 
-function toCsv(rows: Record<string, unknown>[], columns: string[]) {
-  const item = (v: unknown) => {
-    const row = v as { question?: string; answer?: string } | null
-    return row && typeof row === 'object' && 'question' in row ? `${row.question}: ${row.answer}` : String(v)
-  }
-  const cell = (v: unknown) => {
-    const s = Array.isArray(v) ? v.map(item).join('; ') : v == null ? '' : String(v)
-    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
-  }
-  return [columns.join(','), ...rows.map((r) => columns.map((c) => cell(r[c])).join(','))].join('\n')
-}
-
-const csvEndpoint = (slug: 'enquiries' | 'partner-enquiries', columns: string[]): Endpoint => ({
-  path: '/export.csv',
+const exportEndpoint = (slug: ExportSlug): Endpoint => ({
+  path: '/export.xlsx',
   method: 'get',
   handler: async (req) => {
     if (!req.user || (req.user as { role?: string }).role !== 'owner') {
-      return Response.json({ error: 'Only the Owner can export enquiries.' }, { status: 403 })
+      return Response.json({ error: 'Only the Owner can download enquiries.' }, { status: 403 })
     }
-    const { docs } = await req.payload.find({ collection: slug, limit: 10000, depth: 0, sort: '-createdAt', req })
-    const body = toCsv(docs as unknown as Record<string, unknown>[], columns)
-    return new Response(body, {
+    const query = (req.query ?? {}) as Record<string, unknown>
+    const sort = typeof query.sort === 'string' && /^-?[A-Za-z_]+$/.test(query.sort) ? query.sort : '-createdAt'
+    const { docs } = await req.payload.find({
+      collection: slug,
+      where: exportWhere(slug, query),
+      sort,
+      limit: 10000,
+      depth: 0,
+      pagination: false,
+      overrideAccess: false,
+      req,
+    })
+    const body = await buildWorkbook(slug, docs as unknown as Record<string, unknown>[])
+    const ids = typeof query.ids === 'string' ? query.ids : undefined
+    return new Response(new Uint8Array(body), {
       headers: {
-        'Content-Type': 'text/csv; charset=utf-8',
-        'Content-Disposition': `attachment; filename="${slug}-${new Date().toISOString().slice(0, 10)}.csv"`,
+        'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'Content-Disposition': `attachment; filename="${exportFilename(slug, ids, docs.length)}"`,
+        'Cache-Control': 'no-store',
       },
     })
   },
@@ -69,15 +70,14 @@ export const Enquiries: CollectionConfig = {
     group: 'Enquiries',
     useAsTitle: 'email',
     defaultColumns: ['firstName', 'lastName', 'service', 'status', 'createdAt'],
-    description: exportDescription('enquiries'),
+    description,
+    components: {
+      beforeListTable: ['/components/admin/ExportEnquiries#ConsultationListExport'],
+      edit: { beforeDocumentControls: ['/components/admin/ExportEnquiries#ConsultationDocumentExport'] },
+    },
   },
   access: { read: ownerOnly, create: () => false, update: ownerOnly, delete: ownerOnly },
-  endpoints: [
-    csvEndpoint('enquiries', [
-      'createdAt', 'status', 'language', 'firstName', 'lastName', 'gender', 'email', 'phone', 'role', 'service',
-      'participantName', 'participantAge', 'answers', 'message',
-    ]),
-  ],
+  endpoints: [exportEndpoint('enquiries')],
   fields: [
     {
       type: 'row',
@@ -135,14 +135,14 @@ export const PartnerEnquiries: CollectionConfig = {
     group: 'Enquiries',
     useAsTitle: 'organisation',
     defaultColumns: ['organisation', 'organisationType', 'country', 'status', 'createdAt'],
-    description: exportDescription('partner-enquiries'),
+    description,
+    components: {
+      beforeListTable: ['/components/admin/ExportEnquiries#PartnerListExport'],
+      edit: { beforeDocumentControls: ['/components/admin/ExportEnquiries#PartnerDocumentExport'] },
+    },
   },
   access: { read: ownerOnly, create: () => false, update: ownerOnly, delete: ownerOnly },
-  endpoints: [
-    csvEndpoint('partner-enquiries', [
-      'createdAt', 'status', 'language', 'organisation', 'organisationType', 'country', 'contact', 'email', 'website', 'proposal',
-    ]),
-  ],
+  endpoints: [exportEndpoint('partner-enquiries')],
   fields: [
     { name: 'organisation', type: 'text', required: true, admin: readOnly },
     {

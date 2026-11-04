@@ -58,6 +58,13 @@ export const Media: CollectionConfig = {
       { name: 'og', width: 1200, height: 630, position: 'centre' },
     ],
     adminThumbnail: 'thumbnail',
+    // Files were sent with max-age=0, so every request went through Payload, the database and
+    // R2 (about 0.75 s) and the CDN never kept a copy. Let browsers and the CDN keep them for a
+    // week; a new upload gets a new file name, so it shows at once.
+    modifyResponseHeaders: ({ headers }) => {
+      headers.set('Cache-Control', 'public, max-age=604800, s-maxage=604800, stale-while-revalidate=86400')
+      return headers
+    },
   },
   hooks: {
     beforeOperation: [

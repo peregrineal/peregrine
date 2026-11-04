@@ -6,6 +6,7 @@ import type { ReactNode } from 'react'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { ScrollTopButton } from '@/components/ScrollTopButton'
+import { WarmImages } from '@/components/WarmImages'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { siteDefaults } from '@/components/siteDefaults'
 import { CANONICAL_URL } from '@/lib/constants'
@@ -86,6 +87,7 @@ export default async function FrontendLayout({ children, params }: Props) {
           {children}
         </main>
         <Footer data={footer} settings={settings} locale={locale} />
+        <WarmImages />
         {/* Floating actions, bottom right: back to top stacks above WhatsApp. */}
         <div className="wa">
           <ScrollTopButton label={t.header.backToTop} />

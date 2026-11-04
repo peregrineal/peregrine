@@ -15,7 +15,12 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   images: {
     localPatterns: [{ pathname: '/api/media/file/**' }, { pathname: '/brand/**' }, { pathname: '/images/**' }],
-    formats: ['image/avif', 'image/webp'],
+    // WebP only: AVIF is a little smaller but several times slower to encode, and every photo is
+    // encoded on its first request, which held photos back about 3 seconds behind the page.
+    formats: ['image/webp'],
+    // Keep resized photos for a week instead of the default 4 hours, so visitors rarely hit an
+    // unencoded one.
+    minimumCacheTTL: 60 * 60 * 24 * 7,
   },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {

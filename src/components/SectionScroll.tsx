@@ -16,7 +16,8 @@ const menuOpen = () => Boolean(document.querySelector('#menu-mob[data-open]'))
  * previous section. A section taller than the screen gets in-between stops, so nothing is skipped.
  * On desktop a slightly too tall section is scaled down to fit, but only when that is enough
  * (no further than MIN_ZOOM); otherwise it keeps its size and uses the extra stops.
- * With reduced motion the page jumps instead of gliding.
+ * With reduced motion the page jumps instead of gliding. Below 1024px it is off: the page
+ * scrolls natively and sections keep their natural height.
  */
 export function SectionScroll() {
   useEffect(() => {
@@ -221,7 +222,8 @@ export function SectionScroll() {
     }
 
     const update = () => {
-      active = true
+      // Phones and tablets scroll freely (client request, 4 November 2026); only desktop snaps.
+      active = desktop.matches
       root.toggleAttribute('data-section-scroll', active)
       // Anchor links land exactly where a section starts, under the header; side photos are
       // capped to the screen height (globals.css).

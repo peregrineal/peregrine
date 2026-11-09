@@ -26,10 +26,21 @@ const email = process.env.RESEND_API_KEY
   : undefined
 
 // Media goes to Cloudflare R2 once the R2_* variables are set; without them uploads stay on local disk (/media).
-// Files are still served through /api/media/file/..., so access control and next/image localPatterns keep working.
+// Without R2_PUBLIC_URL, files are served through /api/media/file/..., which wakes the server function and the
+// database for every photo the CDN has not cached (1-4 s after a quiet spell). With it, photo URLs point
+// straight at the public bucket. Media read access is `anyone`, so nothing becomes public that was not already.
+const r2PublicUrl = process.env.R2_PUBLIC_URL?.replace(/\/+$/, '')
 const r2 = process.env.R2_BUCKET
   ? s3Storage({
-      collections: { media: true },
+      collections: {
+        media: r2PublicUrl
+          ? {
+              disablePayloadAccessControl: true,
+              generateFileURL: ({ filename, prefix }) =>
+                `${r2PublicUrl}/${[prefix, filename].filter((part): part is string => Boolean(part)).map((part) => encodeURIComponent(part)).join('/')}`,
+            }
+          : true,
+      },
       bucket: process.env.R2_BUCKET,
       config: {
         endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,

@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   images: {
     localPatterns: [{ pathname: '/api/media/file/**' }, { pathname: '/brand/**' }, { pathname: '/images/**' }],
+    // Photos served straight from the public R2 bucket (R2_PUBLIC_URL, see payload.config.ts).
+    remotePatterns: process.env.R2_PUBLIC_URL ? [new URL(`${process.env.R2_PUBLIC_URL.replace(/\/+$/, '')}/**`)] : [],
     // WebP only: AVIF is a little smaller but several times slower to encode, and every photo is
     // encoded on its first request, which held photos back about 3 seconds behind the page.
     formats: ['image/webp'],

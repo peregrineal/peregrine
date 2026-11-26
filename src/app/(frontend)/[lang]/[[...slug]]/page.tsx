@@ -28,10 +28,18 @@ export async function generateStaticParams() {
 
 const slugFrom = (segments?: string[]) => (segments?.length ? segments.join('/') : 'home')
 
+/**
+ * Page slugs are one segment of lowercase letters, numbers and dashes (the slug field enforces it).
+ * Anything else (bot probes such as /wp-login or /xmlrpc/x) is a 404 before the database is asked,
+ * so scanners cannot make every made-up address cost a page render and two queries.
+ */
+const SLUG = /^[a-z0-9-]+$/
+const isSlugPath = (segments?: string[]) => !segments?.length || (segments.length === 1 && SLUG.test(segments[0]))
+
 export default async function Page({ params }: Args) {
   const { lang, slug } = await params
   // Unknown first segments (a missing /file.png) land here too.
-  if (!isLocale(lang)) notFound()
+  if (!isLocale(lang) || !isSlugPath(slug)) notFound()
   const locale = setRequestLocale(lang)
   const { isEnabled: draft } = await draftMode()
   const page = await getPageBySlug(slugFrom(slug), locale, draft)
@@ -49,7 +57,7 @@ export default async function Page({ params }: Args) {
 
 export async function generateMetadata({ params }: Args): Promise<Metadata> {
   const { lang, slug } = await params
-  if (!isLocale(lang)) return {}
+  if (!isLocale(lang) || !isSlugPath(slug)) return {}
   const locale = setRequestLocale(lang)
   const s = slugFrom(slug)
   const [page, settings] = await Promise.all([getPageBySlug(s, locale).catch(() => null), getSiteSettings(locale)])

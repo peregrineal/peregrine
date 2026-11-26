@@ -1,6 +1,6 @@
 # PEREGRINE: handover
 
-Status on 25 October 2026. Built by DuaDev with Claude Code.
+Status on 25 October 2026. Built by DuaDev.
 
 ## What is built
 

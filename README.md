@@ -39,7 +39,7 @@ The Owner login is `SEED_OWNER_EMAIL` / `SEED_OWNER_PASSWORD` from `.env`. Chang
 ```
 src/
   app/(frontend)/          public site: [lang] layout and [[...slug]] page renderer, enquiry API routes, draft preview
-  proxy.ts                 language routing: / is English (served by /en internally), /sq is Albanian
+  (next.config.ts)         language routing: / is English (rewritten to /en internally), /sq is Albanian
   app/(payload)/           Payload admin and REST/GraphQL API (generated, plus custom.scss branding)
   blocks/configs.ts        the 15 section types the owner can add to a page (admin fields)
   blocks/components/       the React component for each section type

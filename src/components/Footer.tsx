@@ -56,11 +56,13 @@ export function Footer({ data, settings, locale }: { data: FooterData | null; se
   const socials = (settings?.socialLinks ?? []).filter((l) => l.url)
   const year = new Date().getFullYear()
 
+  // Footer links do not prefetch: section scrolling brings the footer into view on every page, which
+  // fetched every linked page in the background on each visit. The header links still prefetch.
   return (
     <footer className="on-dark bg-navy text-white">
       <div className="wrap grid gap-10 pt-[72px] pb-12 [grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr))]">
         <div className="flex flex-col gap-4">
-          <Link href={localizePath('/', locale)} aria-label={t.header.home} className="flink inline-flex min-h-11">
+          <Link href={localizePath('/', locale)} prefetch={false} aria-label={t.header.home} className="flink inline-flex min-h-11">
             <Image src="/brand/logo-stacked-white.png" alt="" width={940} height={433} className="h-auto w-[190px]" />
           </Link>
           <p className="text-[13px] text-white/78">{data?.tagline || t.footer.tagline}</p>
@@ -69,7 +71,7 @@ export function Footer({ data, settings, locale }: { data: FooterData | null; se
           <nav key={c.title} aria-label={c.title} className="flex flex-col items-start text-[14px]">
             <p className="eyebrow mb-1.5">{c.title}</p>
             {c.links.map((l) => (
-              <Link key={l.href + l.label} className="flink flink-tap" href={l.href}>
+              <Link key={l.href + l.label} className="flink flink-tap" href={l.href} prefetch={false}>
                 {l.label}
               </Link>
             ))}
@@ -109,7 +111,7 @@ export function Footer({ data, settings, locale }: { data: FooterData | null; se
         <p className="flex flex-wrap items-center gap-x-5">
           <span>© {year} PEREGRINE</span>
           {/* Fixed here rather than in the editable columns: the consent wording links to it. */}
-          <Link className="flink flink-tap" href={pathForSlug(PRIVACY_SLUG, locale)}>
+          <Link className="flink flink-tap" href={pathForSlug(PRIVACY_SLUG, locale)} prefetch={false}>
             {t.footer.privacy}
           </Link>
         </p>

@@ -3,6 +3,8 @@ import type { NextConfig } from 'next'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+import { DEFAULT_LOCALE, LOCALES } from './src/lib/i18n'
+
 const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
@@ -35,6 +37,28 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     root: path.resolve(dirname),
+  },
+  // English is served without a prefix: /about-us is rendered by /en/about-us behind the scenes, and a
+  // typed /en/... address redirects to the clean one. Other languages (/sq/...) pass straight through
+  // to the [lang] route. These used to live in src/proxy.ts, which ran a function on every page view
+  // and every link prefetch; as config rules Vercel applies them in its routing layer instead.
+  async redirects() {
+    return [
+      // Its own rule: '/:path*' with an empty path gives an empty Location header.
+      { source: `/${DEFAULT_LOCALE}`, destination: '/', permanent: true },
+      { source: `/${DEFAULT_LOCALE}/:path+`, destination: '/:path+', permanent: true },
+    ]
+  },
+  async rewrites() {
+    // Paths without a file extension (public assets, sitemap.xml) that are not a language,
+    // the admin, the APIs, the preview routes or Next.js internals.
+    const skip = [...LOCALES, 'admin', 'api', 'next', '_next'].join('|')
+    return {
+      beforeFiles: [
+        { source: '/', destination: `/${DEFAULT_LOCALE}` },
+        { source: `/:path((?!(?:${skip})(?:/|$))[^.]+)`, destination: `/${DEFAULT_LOCALE}/:path` },
+      ],
+    }
   },
 }
 

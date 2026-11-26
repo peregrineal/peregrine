@@ -6,7 +6,7 @@ import Link from 'next/link'
  */
 export function ConsentText({ text, phrase, linkLabel, href }: { text: string; phrase: string; linkLabel: string; href: string }) {
   const link = (label: string) => (
-    <Link href={href} target="_blank" rel="noopener" className="font-semibold text-navy underline underline-offset-2">
+    <Link href={href} prefetch={false} target="_blank" rel="noopener" className="font-semibold text-navy underline underline-offset-2">
       {label}
     </Link>
   )

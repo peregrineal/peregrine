@@ -27,12 +27,16 @@ export const revalidatePage: CollectionAfterChangeHook = async ({ doc, previousD
   if (previousDoc?._status === 'published' && previousDoc.slug !== doc.slug) {
     await revalidateSlug(previousDoc.slug)
   }
-  await revalidate('/sitemap.xml')
+  // The sitemap lists published pages only. Draft autosaves (every 2 s while editing) leave it
+  // unchanged, so it is refreshed only on a publish, or when a published page turns into a draft.
+  if (doc._status === 'published' || previousDoc?._status === 'published') await revalidate('/sitemap.xml')
   return doc
 }
 
 export const revalidatePageDelete: CollectionAfterDeleteHook = async ({ doc, req }) => {
-  if (!req.context?.disableRevalidate) await revalidateSlug(doc?.slug)
+  if (req.context?.disableRevalidate) return doc
+  await revalidateSlug(doc?.slug)
+  await revalidate('/sitemap.xml')
   return doc
 }
 

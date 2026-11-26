@@ -81,7 +81,7 @@ export default buildConfig({
   collections: [Pages, Destinations, FieldsOfStudy, Faqs, Services, Media, Enquiries, PartnerEnquiries, Users],
   globals: [SiteSettings, Header, Footer],
   localization: {
-    // English at /, Albanian at /sq (see src/proxy.ts). Empty Albanian fields fall back to English.
+    // English at /, Albanian at /sq (see redirects/rewrites in next.config.ts). Empty Albanian fields fall back to English.
     locales: [
       { label: 'English', code: 'en' },
       { label: 'Shqip', code: 'sq' },
